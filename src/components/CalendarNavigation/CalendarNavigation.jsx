@@ -1,18 +1,23 @@
-import React from 'react';
-import moment from 'moment';
-import { NavigationContainer, NavigationButton, MonthDisplay } from './styled';
+import { NavigationContainer, MonthLabel, NavButton  } from './styled';
 
 const CalendarNavigation = ({ currentDate, onPrevMonth, onNextMonth }) => {
-    const currentMonth = moment(currentDate).format('MMMM');
-    const currentYear = moment(currentDate).format('YYYY');
+    // Форматируем месяц и год
+    const formatMonthYear = (date) => {
+        const monthNames = [
+            'Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'
+        ];
+        return `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+    };
 
     return (
         <NavigationContainer>
-            <NavigationButton onClick={onPrevMonth}>{'<'}</NavigationButton>
-            <MonthDisplay>{`${currentMonth} ${currentYear}`}</MonthDisplay>
-            <NavigationButton onClick={onNextMonth}>{'>'}</NavigationButton>
+            <MonthLabel>{formatMonthYear(currentDate)}</MonthLabel>
+            <NavButton onClick={onPrevMonth} direction="left" />  {/* direction для указания стрелки */}
+            <NavButton onClick={onNextMonth} direction="right" /> {/* direction для указания стрелки */}
         </NavigationContainer>
     );
 };
+
 
 export default CalendarNavigation;

@@ -1,37 +1,42 @@
 import styled from '@emotion/styled';
 
-export const CalendarContainer = styled.div`
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    max-width: 1200px; /* максимальная ширина */
-    width: 90%; /* ширина 90% от родительского контейнера */
-`;
-
 export const NavigationContainer = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 `;
 
-export const NavigationButton = styled.button`
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 2rem;
-    padding: 5px 10px;
-    &:hover {
-        color: #007bff;
-    }
+export const MonthLabel = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+  margin-right: 20px;
 `;
 
-export const MonthDisplay = styled.div`
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 0 15px;
-    text-align: center;
+export const NavButton = styled.button`
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #000;
+  position: relative;
+
+  &::before {
+    content: '${props => (props.direction === 'left' ? '\\003C' : '\\003E')}'; /* '<' или '>' в Unicode */
+    font-size: 20px;
+    color: #000;
+  }
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  &:focus {
+    outline: none;
+  }
 `;

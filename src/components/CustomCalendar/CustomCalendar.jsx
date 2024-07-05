@@ -1,34 +1,19 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { CalendarContainer } from './styled';
-import CalendarNavigation from '../CalendarNavigation/CalendarNavigation';
 
 const localizer = momentLocalizer(moment);
 
-const CustomCalendar = () => {
+const CustomCalendar = ({ selectedDate, events, onDateClick }) => {
   const calendarRef = useRef(null);
-  const [currentDate, setCurrentDate] = useState(new Date());
-
-  const onPrevMonth = () => {
-    setCurrentDate(moment(currentDate).subtract(1, 'month').toDate());
-  };
-
-  const onNextMonth = () => {
-    setCurrentDate(moment(currentDate).add(1, 'month').toDate());
-  };
 
   return (
     <CalendarContainer>
-      <CalendarNavigation
-        currentDate={currentDate}
-        onPrevMonth={onPrevMonth}
-        onNextMonth={onNextMonth}
-      />
       <Calendar
         localizer={localizer}
-        events={[]}
+        events={events}
         startAccessor="start"
         endAccessor="end"
         style={{ height: '80vh', width: '100%' }}
@@ -37,9 +22,9 @@ const CustomCalendar = () => {
         selectable
         popup
         toolbar={false}
-        onNavigate={() => {}}
+        date={selectedDate} // Используем переданную из CalendarPage текущую дату
+        onNavigate={(date) => onDateClick(date)} 
         ref={calendarRef}
-        date={currentDate} // Устанавливаем текущую дату
       />
     </CalendarContainer>
   );

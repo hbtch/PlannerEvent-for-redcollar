@@ -1,16 +1,24 @@
 import styled from '@emotion/styled';
 
 export const Header = styled.header`
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 10px 20px;
+background-color: #fff;
+
+`;
+
+export const HeaderLeft = styled.div`
     display: flex;
     align-items: center;
-    padding: 5px;
-    gap: 20px;
 `;
 
 export const Logo = styled.img`
     width: 200px;
-    height: 30px;
     display: block;
+    height: 40px;
+    margin-right: 20px;
 `;
 
 export const H1 = styled.h1`
@@ -19,6 +27,9 @@ export const H1 = styled.h1`
     font-style: bold;
     font-size: 45px;
     margin-top: 15px;
+    display: flex;
+    align-items: center;
+    margin: 0;
 `;
 
 export const Span = styled.span`
@@ -26,7 +37,8 @@ export const Span = styled.span`
     font-family: "Kanit", sans-serif;
     font-weight: 500;
     font-style: bold;
-    color: ${({ color }) => color || 'black'};
+    color: ${props => props.color};
+    margin: 0 5px;
 `;
 
 export const StyledCalendarPage = styled.div`
@@ -34,4 +46,23 @@ export const StyledCalendarPage = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 20px;
+`;
+export const NavigationWrapper = styled.div`
+    display: flex;
+    align-items: center;
+`;
+
+export const LoginButton = styled.button`
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 20px;
+
+    &:hover {
+        background-color: #333;
+    }
 `;
