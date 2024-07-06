@@ -13,11 +13,14 @@
     "react-big-calendar": "^1.13.0",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
+    "strapi": "^3.6.11",
+    "strapi-admin": "^3.6.11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "develop": "strapi develop",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
