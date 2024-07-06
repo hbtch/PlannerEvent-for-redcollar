@@ -29,7 +29,7 @@ const CalendarPage = () => {
         <div>
             <Header>
                 <HeaderLeft>
-                    <Logo src="/logo-redcollar.svg" alt="Логотип RedCollar" className="logo" />
+                    <Logo src="/PlannerEvent-for-redcollar/logo-redcollar.svg" alt="Логотип RedCollar" className="logo" />
                     <H1>
                         <Span color="black">planner </Span>
                         <Span color="red">event</Span>
