@@ -3,12 +3,26 @@ import styled from '@emotion/styled';
 export const NavigationContainer = styled.div`
   display: flex;
   align-items: center;
+  @media (min-width: 1280px) {
+    margin-bottom: 20px;
+}
+  @media (min-width: 1440px) {
+    margin-bottom: 30px;
+}
 `;
 
 export const MonthLabel = styled.div`
   font-size: 24px;
   font-weight: bold;
   margin-right: 20px;
+  @media (min-width: 1280px) {
+    font-size: 28px;
+    margin-bottom: 10px;
+    margin-right: 0;
+}
+  @media (min-width: 1440px) {
+    font-size: 32px;
+}
 `;
 
 export const NavButton = styled.button`
@@ -39,4 +53,7 @@ export const NavButton = styled.button`
   &:focus {
     outline: none;
   }
+  @media (max-width: 1280px) {
+    margin-top: 10px;
+    margin-left: 0
 `;
