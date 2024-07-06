@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/PlannerEvent-for-redcollar/static/css/main.01de5453.css",
-    "main.js": "/PlannerEvent-for-redcollar/static/js/main.1bea079e.js",
+    "main.js": "/PlannerEvent-for-redcollar/static/js/main.961db902.js",
     "index.html": "/PlannerEvent-for-redcollar/index.html",
     "main.01de5453.css.map": "/PlannerEvent-for-redcollar/static/css/main.01de5453.css.map",
-    "main.1bea079e.js.map": "/PlannerEvent-for-redcollar/static/js/main.1bea079e.js.map"
+    "main.961db902.js.map": "/PlannerEvent-for-redcollar/static/js/main.961db902.js.map"
   },
   "entrypoints": [
     "static/css/main.01de5453.css",
-    "static/js/main.1bea079e.js"
+    "static/js/main.961db902.js"
   ]
 }
